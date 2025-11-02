@@ -1,0 +1,128 @@
+/* Dark Animated Portfolio Styles */
+:root{
+  --bg:#0b0d10;
+  --card:#0f1115;
+  --muted:#9aa4b2;
+  --accent:#00e5ff;
+  --glow: 0 10px 30px rgba(0,229,255,0.08);
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(ellipse at 10% 10%, rgba(0,229,255,0.03), transparent 10%), var(--bg);
+  color:#ecf0f3;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+/* starfield parallax layer */
+.stars{
+  position:fixed;
+  inset:0;
+  background-image: radial-gradient(#0ff 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity:0.03;
+  transform: translateZ(0);
+  pointer-events:none;
+  z-index:0;
+  animation: drift 60s linear infinite;
+}
+@keyframes drift{ from{background-position:0 0} to{background-position:600px 400px} }
+
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  position:relative;
+  z-index:3;
+}
+.logo{font-weight:700; letter-spacing:0.6px}
+.nav-links a{color:var(--muted); margin-left:18px; text-decoration:none; font-size:0.95rem}
+.nav-links .btn{padding:8px 12px; border-radius:8px; background:linear-gradient(90deg, rgba(255,255,255,0.03), transparent); border:1px solid rgba(255,255,255,0.04); color:var(--accent)}
+
+/* HERO */
+.hero{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  padding:0 20px 40px;
+  z-index:1;
+  overflow:hidden;
+}
+.hero-inner{display:flex; align-items:center; justify-content:space-between; gap:30px; width:100%; max-width:1100px; margin:0 auto; padding:40px 0}
+.intro{max-width:640px}
+.headline{font-size:2.2rem; margin:0 0 8px;}
+.headline .name{color:var(--accent)}
+
+/* Typewriter */
+.typewriter{color:var(--muted); height:34px; font-weight:600}
+.lead{color:var(--muted); margin-top:14px}
+
+/* Profile card */
+.profile-card{width:260px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:18px; border:1px solid rgba(255,255,255,0.03); box-shadow:var(--glow)}
+.avatar{height:90px; width:90px; border-radius:50%; background:linear-gradient(135deg, #0ff, #6ff); margin-bottom:12px; box-shadow:0 8px 30px rgba(0,229,255,0.08)}
+
+
+.cta{margin-top:18px; display:flex; gap:12px}
+.btn{display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; color:inherit; border:1px solid rgba(255,255,255,0.04)}
+.btn.primary{background:linear-gradient(90deg,#00e5ff22, transparent); color:var(--accent); box-shadow:0 6px 20px rgba(0,229,255,0.04); border:none}
+.btn.ghost{background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.03)}
+
+/* scroll hint */
+.scroll-hint{position:absolute; bottom:18px; left:50%; transform:translateX(-50%); color:var(--muted); font-size:0.9rem; z-index:2; opacity:0.9}
+
+/* sections */
+main{padding:60px 20px 120px; max-width:1100px; margin:0 auto}
+section{margin-bottom:44px; background:transparent; padding:18px}
+section h2{margin:0 0 14px; color:var(--accent); font-size:1.25rem}
+
+/* projects grid and cards */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03); transition:transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s}
+.card h3{margin:0 0 8px}
+.tags span{display:inline-block; background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px; margin-right:8px; font-size:0.8rem; color:var(--muted)}
+
+/* skills */
+.skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px}
+.skill{padding:14px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); text-align:center; border:1px solid rgba(255,255,255,0.03)}
+
+/* hover glow */
+.hover-glow:hover{transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,229,255,0.06), 0 6px 18px rgba(0,0,0,0.6)}
+
+/* reveal on scroll */
+.reveal{opacity:0; transform:translateY(18px); transition:all .7s cubic-bezier(.2,.9,.2,1); will-change:transform,opacity}
+.reveal.visible{opacity:1; transform:translateY(0)}
+
+/* contact form */
+.contact-form{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.contact-form input, .contact-form textarea{background:transparent; border:1px solid rgba(255,255,255,0.06); padding:12px; border-radius:8px; color:var(--muted)}
+.contact-form textarea{grid-column:1 / -1; min-height:120px}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column-reverse; align-items:center}
+  .profile-card{width:100%}
+  .contact-form{grid-template-columns:1fr;}
+}
+
+/* small animations */
+@keyframes floaty { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
+.profile-card{animation:floaty 6s ease-in-out infinite}
+
+/* subtle entrance for nav */
+.nav{opacity:0; transform:translateY(-6px); animation:navIn .8s forwards .2s}
+@keyframes navIn{to{opacity:1; transform:none}}
+
+/* footer */
+footer{padding:40px 20px; text-align:center; color:var(--muted); border-top:1px solid rgba(255,255,255,0.03)}
+
+/* focus outlines */
+a:focus, button:focus, input:focus, textarea:focus{outline:2px solid rgba(0,229,255,0.12); outline-offset:3px}

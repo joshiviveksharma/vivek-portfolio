@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Vivek Sharma Joshi — Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="hero" id="hero">
+    <nav class="nav">
+      <div class="logo">Vivek J.</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="resume.pdf" download>Resume</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <div class="intro">
+        <h1 class="headline">Hi, I'm <span class="name">Vivek</span></h1>
+        <h2 class="typewriter" id="typewriter"></h2>
+        <p class="lead">Software Engineer • AI & Data Enthusiast • Full-stack Developer</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See my work</a>
+          <a class="btn ghost" href="mailto:joshiviveksharma@gmail.com">Say hello</a>
+        </div>
+      </div>
+      <div class="profile-card" id="profileCard">
+        <div class="avatar"></div>
+        <div class="card-info">
+          <h3>Vivek Sharma Joshi</h3>
+          <p>Hyderabad, Telangana</p>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/joshiviveksharma/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/joshiviveksharma" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </div>
+
+  <main>
+    <section id="about" class="reveal">
+      <h2>About</h2>
+      <p>Innovative and detail-oriented Software Engineer skilled in Python, Java, SQL, Cloud, and IoT with hands-on experience in building scalable applications and AI-driven solutions. Proficient in full-stack development, data visualization with Tableau, and cloud technologies (AWS, MERN stack).</p>
+    </section>
+
+    <section id="projects" class="section projects">
+      <h2 class="reveal">Projects</h2>
+      <div class="grid">
+        <article class="card reveal hover-glow">
+          <h3>EduLov — AI E-learning</h3>
+          <p>Adaptive learning with gamification and analytics for personalised education.</p>
+          <div class="tags"><span>Python</span><span>ML</span><span>AWS</span></div>
+        </article>
+        <article class="card reveal hover-glow">
+          <h3>Shade Shuffle</h3>
+          <p>Python Tkinter color-matching GUI game focused on UX.</p>
+          <div class="tags"><span>Python</span><span>Tkinter</span></div>
+        </article>
+        <article class="card reveal hover-glow">
+          <h3>Resume Builder</h3>
+          <p>Responsive resume builder web app using HTML, CSS & JS.</p>
+          <div class="tags"><span>HTML</span><span>JavaScript</span></div>
+        </article>
+        <article class="card reveal hover-glow">
+          <h3>Used Car Price Predictor</h3>
+          <p>ML model (~92% accuracy) with Streamlit UI for real-time predictions.</p>
+          <div class="tags"><span>Python</span><span>Scikit-learn</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill hover-glow">Python</div>
+        <div class="skill hover-glow">Java</div>
+        <div class="skill hover-glow">JavaScript</div>
+        <div class="skill hover-glow">HTML & CSS</div>
+        <div class="skill hover-glow">SQL</div>
+        <div class="skill hover-glow">AWS</div>
+        <div class="skill hover-glow">Azure</div>
+        <div class="skill hover-glow">MERN</div>
+        <div class="skill hover-glow">IoT</div>
+        <div class="skill hover-glow">Tableau</div>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal contact-section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:joshiviveksharma@gmail.com">joshiviveksharma@gmail.com</a></p>
+      <form id="contact-form" class="contact-form">
+        <input id="name" placeholder="Your name" required>
+        <input id="email" placeholder="Your email" required>
+        <textarea id="message" placeholder="Message" required></textarea>
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Vivek Sharma Joshi — Animated Portfolio</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
